@@ -8,7 +8,6 @@ import android.graphics.Paint;
 import android.graphics.Point;
 import android.graphics.Rect;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Display;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
@@ -52,7 +51,7 @@ public class CrazyBreakoutGame extends Activity {
         private static Bola bola;
         private static Raqueta raqueta;
         ///////////////////////////////////////////////
-        private static MainMenu menuPrincipal;
+        private static PantallaInicio menuPrincipal;
 
 
         //se crea el rectangulo del boton de play
@@ -78,7 +77,7 @@ public class CrazyBreakoutGame extends Activity {
             //se instancian los objetos
 
             creadorDeObjetos =new CreadorDeObjetos();
-            menuPrincipal = new MainMenu();
+            menuPrincipal = new PantallaInicio();
 
 
             //se instancia la raqueta y se setea la posicion en que se va a dibujar en el canvas
@@ -179,7 +178,7 @@ public class CrazyBreakoutGame extends Activity {
 
                         Iterator itr = menuPrincipal.getMenuItems().iterator();
                         while(itr.hasNext()){
-                            MainMenu.MenuItem button = (MainMenu.MenuItem)itr.next();
+                            PantallaInicio.MenuItem button = (PantallaInicio.MenuItem)itr.next();
                             playBottom = button.rect;
                             if(xPos > playBottom.left && xPos < playBottom.right &&
                                     yPos > playBottom.top && yPos < playBottom.bottom){
@@ -241,7 +240,7 @@ public class CrazyBreakoutGame extends Activity {
         //////////////////////////////////////////////////////
         // este metodo se encarga de monstar la pantalla de inicio
         public static void MostarMenuPrincipal(){
-            MainMenu mainMenu = new MainMenu();
+            PantallaInicio mainMenu = new PantallaInicio();
             mainMenu.show(ourHolder, canvas, paint);
         }
 

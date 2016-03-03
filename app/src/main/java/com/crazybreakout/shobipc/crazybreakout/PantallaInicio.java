@@ -13,28 +13,27 @@ import java.util.Vector;
 /**
  * Created by ShobiPc on 22/02/2016.
  */
-public class MainMenu {
+public class PantallaInicio {
     private int screenX, screenY;
     private int color1,color2,color3,color4;
-    public enum MenuResult { Exit, Play }
+    public enum Estado { Play }
     MenuItem playButton;
-    MenuItem exitButton;
 
     public class MenuItem{
         public Rect rect;
-        public MenuResult action;
+        public Estado action;
     }
-    private Vector<MenuItem> _menuItems;
+    private Vector<MenuItem> botones;
 
-    MainMenu(){
+    PantallaInicio(){
         screenX = CrazyBreakoutGame.CrazyBreakoutView.screenX;
         screenY = CrazyBreakoutGame.CrazyBreakoutView.screenY;
 
-        _menuItems = new Vector<MenuItem>();
+        botones = new Vector<MenuItem>();
         Paint paint;
         paint = new Paint();
         paint.setTextSize(230);
-
+// se crea el boton  llamado play y se le da una funcion y se delimita para que  a la hora de la colision con el evento touchs lo reconosca
         String text = "!!!PLAY¡¡¡";
         Rect bounds = new Rect();
         paint.getTextBounds(text, 0, text.length(), bounds);
@@ -46,7 +45,7 @@ public class MainMenu {
         playButton.rect.top = (screenY / 2)-150;
         playButton.rect.bottom = playButton.rect.top + height;
         playButton.rect.right = playButton.rect.left + bounds.width();
-        playButton.action = MenuResult.Play;
+        playButton.action = Estado.Play;
 
        /* text = "Exit";
         paint.getTextBounds(text, 0, text.length(), bounds);
@@ -58,17 +57,18 @@ public class MainMenu {
         exitButton.rect.right = exitButton.rect.left + bounds.width();
         exitButton.action = MenuResult.Exit;
         */
-        _menuItems.addElement(playButton);
+        botones.addElement(playButton);
        // _menuItems.addElement(exitButton);
     }
 
     public Vector<MenuItem> getMenuItems(){
-        return _menuItems;
+        return botones;
     }
 
     public void show(SurfaceHolder holder, Canvas canvas, Paint paint){
         if(holder.getSurface().isValid()){
             canvas = holder.lockCanvas();
+            // se crea el random de colores para que la pantalla tenga un efecto de parpadeo y cambio su color al mismo tiempo
             Random color =new Random();
             color1 = color.nextInt(255);
             color2= color.nextInt(255);
@@ -81,7 +81,7 @@ public class MainMenu {
             float height = paint.descent() - paint.ascent();
             float offset = (height / 2) - paint.descent();
 
-
+            // se dibujo el texto encima del boton de  play
             canvas.drawText("!!!PLAY¡¡¡", playButton.rect.left, playButton.rect.bottom - offset, paint);
             //canvas.drawText("Exit", exitButton.rect.left, exitButton.rect.bottom - offset, paint);
 
