@@ -87,7 +87,7 @@ public class CrazyBreakoutGame extends Activity {
             creadorDeObjetos.añadir("Raqueta",raqueta);
             //se instancia la bola y se setea la posicion en que se va a dibujar en el canvas
             bola=new Bola();
-            bola.setPosicionIni(screenX / 2, screenY/2+screenY/45);
+            bola.setPosicionIni(screenX / 2, screenY/2+250);
             creadorDeObjetos.añadir("Bola",bola);
             // se instancian los bloques y se setea la posicion en que se va a dibujar en el canvas
             bloques=new Bloque[200];

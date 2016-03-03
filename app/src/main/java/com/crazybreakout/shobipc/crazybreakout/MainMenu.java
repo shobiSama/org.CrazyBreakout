@@ -33,22 +33,22 @@ public class MainMenu {
         _menuItems = new Vector<MenuItem>();
         Paint paint;
         paint = new Paint();
-        paint.setTextSize(130);
+        paint.setTextSize(230);
 
-        String text = "Play";
+        String text = "!!!PLAY¡¡¡";
         Rect bounds = new Rect();
         paint.getTextBounds(text, 0, text.length(), bounds);
         int height = (int) (paint.descent() - paint.ascent());
-        int dist = screenY/10;
+        //int dist = screenY/10;
         playButton = new MenuItem();
         playButton.rect = new Rect();
         playButton.rect.left = (screenX / 2) - (bounds.width() / 2);
-        playButton.rect.top = (screenY / 2) - height - dist/2;
+        playButton.rect.top = (screenY / 2)-150;
         playButton.rect.bottom = playButton.rect.top + height;
         playButton.rect.right = playButton.rect.left + bounds.width();
         playButton.action = MenuResult.Play;
 
-        text = "Exit";
+       /* text = "Exit";
         paint.getTextBounds(text, 0, text.length(), bounds);
         exitButton = new MenuItem();
         exitButton.rect = new Rect();
@@ -57,9 +57,9 @@ public class MainMenu {
         exitButton.rect.bottom = exitButton.rect.top + height;
         exitButton.rect.right = exitButton.rect.left + bounds.width();
         exitButton.action = MenuResult.Exit;
-
+        */
         _menuItems.addElement(playButton);
-        _menuItems.addElement(exitButton);
+       // _menuItems.addElement(exitButton);
     }
 
     public Vector<MenuItem> getMenuItems(){
@@ -76,13 +76,13 @@ public class MainMenu {
             color4= color.nextInt(255);
             canvas.drawColor(Color.argb(color1, color2, color3, color4));
             paint.setColor(Color.argb(color2, color4, color3, color1));
-            paint.setTextSize(130);
+            paint.setTextSize(230);
 
             float height = paint.descent() - paint.ascent();
             float offset = (height / 2) - paint.descent();
 
 
-            canvas.drawText("Play", playButton.rect.left, playButton.rect.bottom - offset, paint);
+            canvas.drawText("!!!PLAY¡¡¡", playButton.rect.left, playButton.rect.bottom - offset, paint);
             //canvas.drawText("Exit", exitButton.rect.left, exitButton.rect.bottom - offset, paint);
 
             holder.unlockCanvasAndPost(canvas);

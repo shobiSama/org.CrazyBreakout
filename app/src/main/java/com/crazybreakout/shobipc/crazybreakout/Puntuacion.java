@@ -29,15 +29,15 @@ public class Puntuacion {
     // se dibuja el resultado en la pantalla principal
     public  void draw (Canvas canvas, Paint paint) {
         paint.setColor(Color.argb(255, 255, 255, 255));
-        paint.setTextSize(25);
-        String Puntuacion = "Score" + puntacion;
+        paint.setTextSize(35);
+        String Puntuacion = "Score:" + puntacion;
         Rect limit = new Rect();
         paint.getTextBounds(Puntuacion, 0, Puntuacion.length(), limit);
-        canvas.drawText("Score:" + puntacion, 10, screenY/2, paint);
+        canvas.drawText(Puntuacion , 10, screenY/2+300, paint);
 
         String vid = "vidas:" + vidas;
         paint.getTextBounds(vid, 0, vid.length(), limit);
-        canvas.drawText(vid, screenX - limit.width() - 15, screenY/2, paint);
+        canvas.drawText(vid, 10, screenY/2+375, paint);
         // si el jugador gana
         if (resultado == ResultadoJuego.gano) {
             paint.setTextSize(screenY / 6);
