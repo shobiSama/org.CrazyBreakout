@@ -6,7 +6,7 @@ import android.graphics.Paint;
 import android.graphics.PointF;
 
 /**
- * Created by ShobiPc on 28/02/2016.
+ * Created by ShobiPc on 26/02/2016.
  */
 public class Raqueta extends MostrarObjetos {
     private float velocidad;

@@ -11,7 +11,7 @@ import java.util.Random;
 import java.util.Vector;
 
 /**
- * Created by ShobiPc on 28/02/2016.
+ * Created by ShobiPc on 22/02/2016.
  */
 public class MainMenu {
     private int screenX, screenY;
@@ -83,7 +83,7 @@ public class MainMenu {
 
 
             canvas.drawText("Play", playButton.rect.left, playButton.rect.bottom - offset, paint);
-            canvas.drawText("Exit", exitButton.rect.left, exitButton.rect.bottom - offset, paint);
+            //canvas.drawText("Exit", exitButton.rect.left, exitButton.rect.bottom - offset, paint);
 
             holder.unlockCanvasAndPost(canvas);
         }

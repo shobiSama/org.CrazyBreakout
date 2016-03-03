@@ -6,7 +6,7 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 
 /**
- * Created by ShobiPc on 28/02/2016.
+ * Created by ShobiPc on 22/02/2016.
  */
 public class Puntuacion {
     private int puntacion;
