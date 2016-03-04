@@ -37,20 +37,20 @@ public class Puntuacion {
 
         String vid = "vidas:" + vidas;
         paint.getTextBounds(vid, 0, vid.length(), limit);
-        canvas.drawText(vid, 10, screenY/2+375, paint);
+        canvas.drawText(vid, 10, screenY/2+350, paint);
         // si el jugador gana
         if (resultado == ResultadoJuego.gano) {
             paint.setTextSize(screenY / 6);
             String ganar = "HAS GANADO";
             paint.getTextBounds(ganar, 0, ganar.length(), limit);
-            canvas.drawText(ganar,screenX/2-500, screenY/2, paint);
+            canvas.drawText(ganar,screenX/2-550, screenY/2, paint);
         }
         //si el jugador pierde
         if (resultado == ResultadoJuego.perdio) {
             paint.setTextSize(screenY / 6);
             String perder = "HAS PERDIDO";
             paint.getTextBounds(perder, 0, perder.length(), limit);
-            canvas.drawText(perder, screenX/2-500, screenY/2, paint);
+            canvas.drawText(perder, screenX/2-550, screenY/2, paint);
         }
     }
 
