@@ -47,7 +47,7 @@ public class PantallaInicio {
         playButton.rect.right = playButton.rect.left + bounds.width();
         playButton.action = Estado.Play;
 
-       /* text = "Exit";
+       /* text = "Exit"
         paint.getTextBounds(text, 0, text.length(), bounds);
         exitButton = new MenuItem();
         exitButton.rect = new Rect();
